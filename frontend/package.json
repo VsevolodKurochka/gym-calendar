@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^4.15.6",
+    "antd-mobile": "^2.3.4",
     "axios": "^0.21.1",
     "cross-env": "^7.0.3",
     "node-sass": "^5.0.0",
