@@ -1,0 +1,13 @@
+.am-calendar .content {
+  position: relative !important;
+  max-height: 400px;
+  .am-icon-cross {
+    display: none !important;
+  }
+  .confirm-panel {
+    display: none !important;
+  }
+}
+.am-calendar .mask {
+  display: none !important;
+}

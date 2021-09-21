@@ -1,7 +1,17 @@
-import {Calendar as MobileCalendar} from 'antd-mobile';
-import {Spin, Typography, Row, Col, Calendar} from 'antd';
+import {Spin, Typography, Row, Col, Calendar, ConfigProvider} from 'antd';
+import ruRU from 'antd/lib/locale/ru_RU';
+import moment from 'moment';
+
 const { Title } = Typography;
-import enUS from 'antd-mobile/lib/calendar/locale/en_US';
+
+
+moment.updateLocale('en', {
+  monthsShort : [
+    "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+  ],
+  weekdaysMin : ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
+});
 
 const Home = ({loading}) => {
 
@@ -20,13 +30,11 @@ const Home = ({loading}) => {
     return (
         <>
             <Title>CALENDAR</Title>
-            <MobileCalendar
-                visible={true}
-            />
-            <br />
-            <h1>Desktop:</h1>
             <div className="home-calendar">
+              <ConfigProvider locale={ruRU}>
                 <Calendar fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect} />
+              </ConfigProvider>
+
             </div>
         </>
     );
