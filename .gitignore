@@ -1,2 +1,6 @@
-backend/.development.env
-backend/.production.env
+.development.env
+.production.env
+
+node_modules/
+
+.idea
