@@ -2,6 +2,8 @@ import {Model, Table, Column, DataType, BelongsToMany} from 'sequelize-typescrip
 import {ApiProperty} from '@nestjs/swagger';
 import {Role} from '../roles/roles.model';
 import {UserRoles} from '../roles/user-roles.model';
+import {Exercises} from '../exercises/exercises.model';
+import {ExercisesUser} from '../exercises/exercises-user.model';
 
 interface UserCreationAttrs {
     email: string;
@@ -33,4 +35,7 @@ export class User extends Model<User, UserCreationAttrs> {
 
     @BelongsToMany(() => Role, () => UserRoles)
     roles: Role[]
+
+    @BelongsToMany(() => Exercises, () => ExercisesUser)
+    exercises: Exercises[]
 }

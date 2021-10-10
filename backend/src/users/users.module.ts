@@ -6,13 +6,17 @@ import {User} from './users.model';
 import {Role} from '../roles/roles.model';
 import {UserRoles} from '../roles/user-roles.model';
 import {RolesModule} from '../roles/roles.module';
+import {Exercises} from '../exercises/exercises.model';
+import {ExercisesUser} from '../exercises/exercises-user.model';
+import {ExercisesModule} from '../exercises/exercises.module';
 
 @Module({
   controllers: [UsersController],
   providers: [UsersService],
   imports: [
-      SequelizeModule.forFeature([User, Role, UserRoles]),
-      RolesModule
+      SequelizeModule.forFeature([User, Role, UserRoles, Exercises, ExercisesUser]),
+      RolesModule,
+      ExercisesModule
   ],
   exports: [UsersService]
 })
