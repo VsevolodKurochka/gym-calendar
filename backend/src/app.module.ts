@@ -7,6 +7,9 @@ import { RolesModule } from './roles/roles.module';
 import {Role} from './roles/roles.model';
 import {UserRoles} from './roles/user-roles.model';
 import { AuthModule } from './auth/auth.module';
+import { ExercisesModule } from './exercises/exercises.module';
+import {ExercisesUser} from './exercises/exercises-user.model';
+import {Exercises} from './exercises/exercises.model';
 
 @Module({
   imports: [
@@ -23,13 +26,16 @@ import { AuthModule } from './auth/auth.module';
       models: [
           User,
           Role,
-          UserRoles
+          UserRoles,
+          Exercises,
+          ExercisesUser
       ],
       autoLoadModels: true
     }),
     UsersModule,
     RolesModule,
     AuthModule,
+    ExercisesModule
   ],
   controllers: [],
   providers: [],
